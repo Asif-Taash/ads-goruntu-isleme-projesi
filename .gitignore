@@ -1,0 +1,7 @@
+# Girdi verileri (videolar, model ağırlıkları) ve üretilen sonuçlar depoya konmaz:
+# büyük ve yeniden üretilebilirler. Model: 5.1'de "python yolo_tespit.py --download-model".
+data/
+outputs/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

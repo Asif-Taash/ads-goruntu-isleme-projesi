@@ -1,0 +1,16 @@
+# Not: opencv-python ile opencv-python-headless ayni "cv2" paketini kurar ve
+# ayni ortamda birlikte kurulmamalidir. Konteynerde ekran olmadigi icin
+# headless surum kullanilir; goruntuler matplotlib ile gosterilir.
+numpy==2.5.4
+opencv-python-headless==5.0.0.93
+matplotlib==3.11.2
+jupyter==1.1.1
+
+# [EK] 5.1 YOLO ile nesne tespiti (2026-10-13, ekip karari: CPU surumu).
+# ultralytics opencv-python'i da ceker; Dockerfile kurulumdan sonra onu kaldirip
+# headless surumu yeniden kurar (yukaridaki nota bakin). torch / torchvision CPU
+# tekerlekleri PyTorch'un deposundan gelir (CUDA'li surum imaji ~5 GB yapar).
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1+cpu
+torchvision==0.29.1+cpu
+ultralytics==8.4.176

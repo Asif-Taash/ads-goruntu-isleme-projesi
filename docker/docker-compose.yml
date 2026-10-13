@@ -1,0 +1,16 @@
+name: ads
+
+services:
+  cv-lab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ads-cv-lab:py3.12.10
+    container_name: ads-cv-lab
+    ports:
+      # Diger projelerle cakismamasi icin host'ta 8890 kullanilir
+      - "127.0.0.1:${JUPYTER_PORT:-8890}:8888"
+    volumes:
+      # Proje kok klasoru (kod klasorleri) konteynerde /workspace olarak gorunur
+      - ..:/workspace
+    restart: "no"
